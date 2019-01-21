@@ -1,0 +1,13 @@
+// SublimeLinter Settings - User
+{
+    "delay": 3,
+
+    "linters":{
+        "pep8": {
+            "ignore": "E501" // line too long
+        },
+        "pylint": {
+            "disable": true
+        }
+    }
+}
