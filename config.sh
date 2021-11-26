@@ -17,21 +17,11 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # ======== Installations ========
 sudo apt-get update
 sudo apt-get install tmux				# terminal multiplexer
-sudo apt-get install silversearcher-ag	# pattern matcher
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all	# fuzzy finder
 
 
 # ======== Configurations ========
-bash "$DIR/Terminal/terminal_profiles.sh"  # gnome terminal profiles
-
-# Sublime user config, if installed
-SUBLIME_USER_CONFIG_PATH=~/.config/sublime-text-3/Packages
-if [ -d "$SUBLIME_USER_CONFIG_PATH/User" ]; then
-  rm -rf "$SUBLIME_USER_CONFIG_PATH/User"
-  cp -R "$DIR/Sublime/User" $SUBLIME_USER_CONFIG_PATH
-fi
-
 # Aliases
 ALIAS_PATH=~/.bash_aliases
 if [ -f $ALIAS_PATH ]; then
