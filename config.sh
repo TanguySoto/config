@@ -28,6 +28,9 @@ if [ -f $ALIAS_PATH ]; then
     cp $ALIAS_PATH "$DIR/bash_aliases.backup-$time_stamp"
 fi
 grep -q -x -F 'alias s="git status"' $ALIAS_PATH || echo 'alias s="git status"' >> $ALIAS_PATH
+grep -q -x -F 'alias d="git diff"' $ALIAS_PATH || echo 'alias d="git diff"' >> $ALIAS_PATH
+grep -q -x -F 'alias loo="git log --date=format:\"%d-%m-%y %H:%M\" --pretty=format:\"%Cblue%ad%x09%Cgreen%h%x09%Creset%s%Cred%d\""' $ALIAS_PATH || echo 'alias loo="git log --date=format:\"%d-%m-%y %H:%M\" --pretty=format:\"%Cblue%ad%x09%Cgreen%h%x09%Creset%s%Cred%d\""' >> $ALIAS_PATH
+grep -q -x -F 'alias lo="loo -10"' $ALIAS_PATH || echo 'alias lo="loo -10"' >> $ALIAS_PATH
 
 # Tmux
 git clone --depth 1 https://github.com/gpakosz/.tmux.git ~/.tmux && ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf && cp $DIR/.tmux.conf.local ~/
